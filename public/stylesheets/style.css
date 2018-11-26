@@ -1,0 +1,21 @@
+@import url("partials/reset.css");
+@import url('https://fonts.googleapis.com/css?family=Lato|Roboto+Slab');
+
+html,
+body{
+  font-family: 'Lato', sans-serif;
+}
+
+.centered {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin-bottom: 50px;
+  font-size: 50px;
+}
+
