@@ -1,12 +1,12 @@
-var MongoClient = require('mongodb').MongoClient
-var vars = require('../vars');
+var vars = require('./../vars');
+const mongoose = require('mongoose');
 
-MongoClient.connect(vars.database, function (err, db) {
-  if (err) throw err
+mongoose.connect(vars.database, function(error){
+   if(error){
+      throw error; 
+   }else{
+      console.log('Conectado a MongoDB');
+   }
+});
 
-  db.collection('api-keys').find().toArray(function (err, result) {
-    if (err) throw err
-
-    console.log(result)
-  })
-})
+module.exports = mongoose; 

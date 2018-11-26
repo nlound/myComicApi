@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 var documentationRouter = require('./routes/docs');
 var apiKeyRouter = require('./routes/generatekey');
 
+var listAllApiKeys = require('./routes/listall');
+
 var app = express();
 
 
@@ -27,7 +29,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/docs', documentationRouter);
-app.use('/generatekey', apiKeyRouter);
+app.use('/api/generatekey', apiKeyRouter);
+app.use('/api/listall', listAllApiKeys);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
